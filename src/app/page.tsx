@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { DataList } from "@/components/elements/DataList";
 
 export default function Home() {
   return (
-    <>
-      helloworld
-    </>
-  );
+    <main>
+      <DataList />
+    </main>
+  )
 }
