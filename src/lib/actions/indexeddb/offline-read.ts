@@ -1,3 +1,4 @@
+"use client"
 import { DataSource } from '@/lib/types/data'
 import { getAllData } from '../data/getData'
 import { getOfflineData, replaceOfflineData } from './indexeddb-read'
