@@ -68,12 +68,11 @@ import {
     CardTitle,
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Skeleton } from '@/components/ui/skeleton'
 import { InstallButton } from './InstallButton'
 
 export function DataList() {
     const [data, setData] = useState<ClientData[]>([])
-    const [source, setSource] = useState<DataSource>('loading')
+    const [source, setSource] = useState<DataSource>('offline')
 
     useEffect(() => {
         let mounted = true
@@ -89,25 +88,6 @@ export function DataList() {
             mounted = false
         }
     }, [])
-
-    /* ---------------- Loading ---------------- */
-    if (source === 'loading') {
-        return (
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {Array.from({ length: 6 }).map((_, i) => (
-                    <Card key={i}>
-                        <CardHeader>
-                            <Skeleton className="h-4 w-3/4" />
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                            <Skeleton className="h-3 w-full" />
-                            <Skeleton className="h-3 w-5/6" />
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        )
-    }
 
     /* ---------------- Empty ---------------- */
     if (data.length === 0) {
