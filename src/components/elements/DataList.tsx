@@ -90,7 +90,7 @@ export function DataList() {
         }
     }, [])
 
-    /* ---------------- Loading ---------------- */ 
+    /* ---------------- Loading ---------------- */
     if (source === 'loading') {
         return (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -117,6 +117,7 @@ export function DataList() {
                 <p className="text-sm">
                     Create something — it will work offline too.
                 </p>
+                <InstallButton />
             </div>
         )
     }
@@ -135,7 +136,6 @@ export function DataList() {
                 )}
             </div>
 
-            <InstallButton />
 
             {/* Cards */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
