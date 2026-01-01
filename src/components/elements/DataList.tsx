@@ -81,6 +81,7 @@ export function DataList() {
         loadDataOfflineAware().then(res => {
             if (!mounted) return
             setData(res.data)
+            setSource("offline")
             setSource(res.source)
         })
 
@@ -89,7 +90,7 @@ export function DataList() {
         }
     }, [])
 
-    /* ---------------- Loading ---------------- */
+    /* ---------------- Loading ---------------- */ 
     if (source === 'loading') {
         return (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
